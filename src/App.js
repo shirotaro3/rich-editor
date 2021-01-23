@@ -55,7 +55,7 @@ const App = ({ className }) =>
                         return (
                             <div className={`message`} key={item.name}>
                                 <div className={`user`}>
-                                    <img src={`user.png`} className={`user-icon`} color={item.color} />
+                                    <img src={`https://github.com/shirotaro3/rich-editor/blob/master/public/user.png`} className={`user-icon`} color={item.color} />
                                 </div>
                                 <div>
                                     <div>
