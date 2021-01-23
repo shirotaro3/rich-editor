@@ -34,7 +34,7 @@ const App = ({ className }) =>
                 div.scrollTop = div.scrollHeight;
                 setWaiting( false );
                 resolve();
-            }, 500 );
+            }, 1500 );
         });
     }, [ waiting ] );
 
@@ -86,7 +86,7 @@ const Styled = styled(App)`
     -webkit-font-smoothing: antialiased;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: ${window.innerHeight}px;
     ul, ol
     {
         list-style-position: inside;

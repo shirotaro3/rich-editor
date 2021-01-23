@@ -15,7 +15,7 @@ const Editor = ( props ) =>
     const onSubmit = useCallback( async( e ) =>
     {
         e.preventDefault();
-        setFocus(true);
+        setFocus(false);
         const value = editor.root.innerHTML;
         if( value === `<p><br></p>` )
         {
@@ -23,7 +23,6 @@ const Editor = ( props ) =>
         };
         await props.onSubmit( value );
         editor.setContents([{ insert: `\n`}]);
-        editor.setSelection(0, 0);
     } );
 
     useEffect( () =>
