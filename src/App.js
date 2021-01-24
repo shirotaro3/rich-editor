@@ -1,6 +1,6 @@
 import react, { useState, useEffect, useCallback, useRef } from 'react';
 import sanitizeHtml from 'sanitize-html';
-import { useUpdate } from 'react-use';
+import { useWindowSize } from 'react-use';
 import styled from 'styled-components';
 import Editor from './Editor';
 import { IoIosArrowBack } from 'react-icons/io';
@@ -81,12 +81,16 @@ const App = ({ className }) =>
     );
 };
 
-const Styled = styled(App)`
+const Styled = styled(App).attrs(props =>
+{
+    const { height } = useWindowSize();
+    return { height: height };
+})`
     font-family: Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     display: flex;
     flex-direction: column;
-    min-height: ${window.innerHeight}px;
+    min-height: ${props => props.height}px;
     ul, ol
     {
         list-style-position: inside;
